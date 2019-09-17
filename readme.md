@@ -1,31 +1,37 @@
-# mern-template-project
+# Georgia Aquarium: _Managers Portal_
 
-# Setup A New Project From This Template
+#### This site is designed to allow the leadership personnel and exhibit managers to view, create, delete, and update the animal exhibits and events for the Georgia Aquarium. The site also provides a platform for managers to give feedback to the GA team members. Given the Georgia Aquarium's commitment to research, conservation and sharing the amazing world of undersea life with the public, this site is designed to increase efficency and communication between team members. 
 
-If you are starting a new project do the following:
+##### Important Links:
+[**Deployed Site**](https://tranquil-hollows-36268.herokuapp.com/)
 
-1. copy/download this directory to where you new project is located and rename
-   it to the name of your project.
-1. change your directory (`cd`) into the copied project template
-1. `npm install`
-1. `npm run dev`
-1. Open a new browser window and navigate to the URL http://localhost:3000/
-    here you should see `hello world` displayed after page load
-    updates should show up here automatically
-1. see the `client/src` `readme.md` file for more information on the react project
+[GitHub Link](https://github.com/brittmagee/SEI23-Project3)
 
-# Setup A New Project Without This Template
+[Project board](https://github.com/brittmagee/SEI23-Project3/projects/1)
 
-If you want to start a project without using this template directory do the
-following:
+<dl>
+  <dt>Tech Specs</dt>
+    <dd>React</dd>
+    <dd>JavaScript</dd>
+    <dd>Node.js</dd>
+    <dd>Express.js</dd>
+    <dd>MongoDB.js</dd>
+    <dd>Mongoose</dd>
+    <dd>HTML5</dd>
+    <dd>CSS</dd>
+</dl>
 
+#### This application has: 
 
-1. `mkdir <project-name>`
-1. `cd <project-name>`
-1. `echo "# <project-name>" > readme.md`
-1. `git init`
-1. `git add readme.md `
-1. `git commit -m "init repo with readme.md"`
-1. `npm init`
-1. `mkdir models views controllers`
-1. `touch ./server.js`
+* Three API models – ....
+* CSS styling...
+* Wireframes that were designed during the planning process.
+* ERD
+* Deployed online and accessible to the public via Heroku
+
+### Wireframe & ERD Images
+![wireframe 1](./public/wireframe1 "Wireframe 1")
+
+![wireframe 2](./public/wireframe2 "Wireframe 2")
+
+![ERD](./public/erd.jpeg "ERD")
