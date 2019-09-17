@@ -30,7 +30,7 @@
 * Deployed online and accessible to the public via Heroku
 
 ### Wireframe & ERD Images
-![wireframe 1](./client/public/wireframe1 "Wireframe 1")
+![wireframe 1](./public/wireframe1 "Wireframe 1")
 
 ![wireframe 2](./client/public/wireframe2 "Wireframe 2")
 
