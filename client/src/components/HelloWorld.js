@@ -1,13 +1,8 @@
-/* Step 1 import React, { Component } and axios
- *
- */
+// Step 1 import React, { Component } and axios
 import React, { Component } from 'react'
-// import axios from 'axios'
 
-/* Step 2
- * Rename this class to reflect the component being created
- *
- */
+// Step 2: Rename this class to reflect the component being created
+
 export default class HelloWorld extends Component {
 
     /* Step 3
@@ -15,7 +10,7 @@ export default class HelloWorld extends Component {
     *
     */
     state = {
-        message: 'hello world'
+        message: 'home'
     }
 
     /* Step 4
