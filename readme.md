@@ -1,6 +1,6 @@
-# Georgia Aquarium: _Managers Portal_
+# eCommerce Title....
 
-#### This site is designed to allow the leadership personnel and exhibit managers to view, create, delete, and update the animal exhibits and events for the Georgia Aquarium. The site also provides a platform for managers to give feedback to the GA team members. Given the Georgia Aquarium's commitment to research, conservation and sharing the amazing world of undersea life with the public, this site is designed to increase efficency and communication between team members. 
+#### Project description and backstory....
 
 ##### Important Links:
 [**Deployed Site**](https://tranquil-hollows-36268.herokuapp.com/)
