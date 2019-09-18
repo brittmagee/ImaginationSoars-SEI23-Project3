@@ -14,11 +14,15 @@ const booksSchema = new mongoose.Schema({
    type: String,
    required: true
  },
-  author: String,
-  genre: String,
+  author: {
+    type: String,
+    required: true
+  },
+  //book associated with specific genre id 
+  genreId: mongoose.Schema.Types.ObjectId,
   yearPublished: Number,
   price: Number,
-  quanity: Number
+  quantity: Number
 })
 
 const bookCollection = mongoose.model("books", booksSchema)
@@ -26,12 +30,9 @@ const bookCollection = mongoose.model("books", booksSchema)
 const exampleBook = () => {
     //note: the .create is a Promise
   return bookCollection.create({
-    title: {
-      type: "The Giraffe and the Pelly and Me",
-      required: true
-    },
+     title: "The Giraffe and the Pelly and Me",
      author: "Roald Dahl",
-     genre: "Children",
+    //  genreId: "Children",
      yearPublished: 1985,
      price: 7.99,
      quantity: 2
@@ -44,6 +45,9 @@ const getAllBooks = () => {
     //note: the .find is a Promise
 }
 
+const getAllBooksByGenre = () => {
+  return bookCollection.find({genreId})
+}
 
 const getSingleBook = (bookId) => {
     return bookCollection.findById(bookId)
@@ -77,6 +81,7 @@ module.exports = {
   books,
   example,
   getAllBooks,
+  getAllBooksByGenre,
   getSingleBook,
   addBook,
   updateBook,

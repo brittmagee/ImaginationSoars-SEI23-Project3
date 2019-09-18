@@ -7,42 +7,49 @@ const bookApi = require('../models/books.js')
 
 // Step 3: Create a new router.
 const bookRouter = express.Router()
+// const bookRouter = express.Router({mergeParams: true})
 
 // Step 4: Put all request handlers here
-bookRouter.get("/", function(req, res){
-  bookApi.getAllBooks().then(allBooks => {
-    res.render("./books/allBooks", {allBooks});
+bookRouter.get("/", (req, res) => {
+  genreApi.getAllBooks()
+    .then(allBooks => {
+    res.json(allBooks)
   })
-  // bookApi.getAllBooks().then(allBooks => {
-  //   res.send(allBooks)
-  // })
+    .catch((error) => {
+      res.send(error)
+    })
 })
 
-bookRouter.get("/exampleBook", function(req, res) {
-  bookApi.exampleBook().then((newBook) => {
-    res.send(newBook)
+bookRouter.get("/", (req, res) => {
+  genreApi.getAllBooksByGenre(req.params.genreId)
+    .then(allBooksByGenre => {
+    res.json(allBooksByGenre)
   })
+    .catch((error) => {
+      res.send(error)
+    })
 })
 
-bookRouter.get("/new", (req, res) => {
-  res.render("./books/newBook", {})
+genreRouter.get("/exampleBook", function(req, res) {
+  genreApi.exampleBook()
+    .then(exampleBook => {
+      res.json(exampleBook)
+    })
+    .catch((error) => {
+      res.send(error)
+    })
 })
 
-bookRouter.get("/:bookId/edit", function(req, res){
-  bookApi.getSingleBook(req.params.bookId).then((editBook) => {
-    res.render("./books/editBook", {editBook})
-  })
-})
 
-
-bookRouter.get("/:bookId", function(req,res){
-  bookApi.getSingleBook(req.params.bookId).then(singleBook => {
-    console.log(singleBook)
-    res.render("./books/book", { singleBook });
-  })
-  // bookApi.getSingleBook(req.params.bookId).then(singleBook => {
-  //     res.send(singleBook)
-  //   })
+genreRouter.get("/:genreId", (req,res) => {
+  genreApi.getSingleGenre(req.params.genreId)
+    .then(singleGenre => {
+      console.log(singleGenre)
+      res.json(singleGenre)
+    })
+    .catch((error) => {
+      res.send(error)
+    })
 })
 
 
