@@ -17,7 +17,8 @@ const booksSchema = new mongoose.Schema({
   author: String,
   genre: String,
   yearPublished: Number,
-  price: Number
+  price: Number,
+  quanity: Number
 })
 
 const bookCollection = mongoose.model("books", booksSchema)
@@ -32,7 +33,8 @@ const exampleBook = () => {
      author: "Roald Dahl",
      genre: "Children",
      yearPublished: 1985,
-     price: 7.99
+     price: 7.99,
+     quantity: 2
   })
 }
 
