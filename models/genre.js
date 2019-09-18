@@ -18,15 +18,58 @@ const genreSchema = new mongoose.Schema({
   books : [booksSchema]
  })
 
+ const genreCollection = mongoose.model("genres", genreSchema)
 
+ const exampleGenre = () => {
+     //note: the .create is a Promise
+   return genreCollection.create({
+    type: "Fantasy",
+    books : [booksSchema]
+   })
+ }
+ 
+ 
+ const getAllGenres = () => {
+     return genreCollection.find()
+     //note: the .find is a Promise
+ }
+ 
+ 
+ const getSingleGenre = (genreId) => {
+     return genreCollection.findById(genreId)
+     //note: the .findById is a Promise
+ }
+ 
+ 
+ const addGenre = (newGenre) => {
+     console.log(newGenre)
+    return genreCollection.create(newGenre)
+ }
+ 
+ 
+ const updateGenre = (genreId, updatedGenre) => {
+     return genreCollection.findByIdAndUpdate(genreId, updatedGenre)
+ }
+ 
+ 
+ const deleteGenre = (genreId) => {
+     return genreCollection.findByIdAndDelete(genreId);
+ }
  
 // Step 3: TODO: create collection API (NOTE: skip this if you are not using mongoose)
 
 //const SampleCollection = mongoose.model('Sample', SampleModelSchema)
 const genre = mongoose.model('Genre', genreSchema)
+const example = mongoose.model('Example', exampleGenre)
 
 // Step 4: export all functions from this file by adding their names as keys to this object
 module.exports = {
   // getHelloWorldString,
-  genre
+  genre,
+  example,
+  getAllGenres,
+  getSingleGenre,
+  addGenre,
+  updateGenre,
+  deleteGenre
 }
