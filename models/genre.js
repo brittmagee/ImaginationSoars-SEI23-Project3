@@ -1,10 +1,9 @@
 //Place all functions, classes, and/or DB schemas here for a single model.
 
-// Step 1: TODO: import mongoose connection
-//NOTE: skip this if you are not using mongoose
+// Step 1: TODO: import mongoose connection (NOTE: skip this if you are not using mongoose)
 
 const mongoose = require('./connection.js')
-const books = require('./books.js')
+const booksSchema = require('./books.js')
 
 // Step 1 alternative: TODO: make a global variable to act as an in memory database. 
 //NOTE: doing this WILL NOT persist your data and you will loose your data once you stop running your server.
@@ -15,12 +14,12 @@ const books = require('./books.js')
 // NOTE: skip this if you are not using mongoose
 
 const genreSchema = new mongoose.Schema({
-  type: {
-    type: String,
-  },
+  type: String,
   books : [booksSchema]
  })
 
+
+ 
 // Step 3: TODO: create collection API (NOTE: skip this if you are not using mongoose)
 
 //const SampleCollection = mongoose.model('Sample', SampleModelSchema)
