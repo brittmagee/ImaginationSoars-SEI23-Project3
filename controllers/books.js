@@ -6,8 +6,8 @@ const express = require('express')
 const bookApi = require('../models/books.js')
 
 // Step 3: Create a new router.
-const bookRouter = express.Router()
-// const bookRouter = express.Router({mergeParams: true})
+// const bookRouter = express.Router()
+const bookRouter = express.Router({mergeParams: true})
 
 // Step 4: Put all request handlers here
 bookRouter.get("/", (req, res) => {
