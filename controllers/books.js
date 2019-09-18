@@ -11,7 +11,7 @@ const bookRouter = express.Router()
 
 // Step 4: Put all request handlers here
 bookRouter.get("/", (req, res) => {
-  genreApi.getAllBooks()
+  bookApi.getAllBooks()
     .then(allBooks => {
     res.json(allBooks)
   })
@@ -21,7 +21,7 @@ bookRouter.get("/", (req, res) => {
 })
 
 bookRouter.get("/", (req, res) => {
-  genreApi.getAllBooksByGenre(req.params.genreId)
+  bookApi.getAllBooksByGenre(req.params.genreId)
     .then(allBooksByGenre => {
     res.json(allBooksByGenre)
   })
@@ -30,8 +30,8 @@ bookRouter.get("/", (req, res) => {
     })
 })
 
-genreRouter.get("/exampleBook", function(req, res) {
-  genreApi.exampleBook()
+bookRouter.get("/exampleBook", function(req, res) {
+  bookApi.exampleBook()
     .then(exampleBook => {
       res.json(exampleBook)
     })
@@ -41,11 +41,31 @@ genreRouter.get("/exampleBook", function(req, res) {
 })
 
 
-genreRouter.get("/:genreId", (req,res) => {
-  genreApi.getSingleGenre(req.params.genreId)
-    .then(singleGenre => {
-      console.log(singleGenre)
-      res.json(singleGenre)
+bookRouter.get("/:bookId", (req,res) => {
+  bookApi.getSingleBook(req.params.bookId)
+    .then(singleBook => {
+      console.log(singleBook)
+      res.json(singleBook)
+    })
+    .catch((error) => {
+      res.send(error)
+    })
+})
+
+bookRouter.post("/", (req, res) => {
+  bookApi.addBook(req.body)
+    .then((newBook) => {
+      res.json(newBook)
+    })
+    .catch((error) => {
+      res.send(error)
+    })
+})
+
+bookRouter.put("/:bookId", (req,res) => {
+  bookApi.updateBook(req.params.bookId, req.body)
+    .then((updatedBook) => {
+      res.json(updatedBook)
     })
     .catch((error) => {
       res.send(error)
@@ -53,29 +73,14 @@ genreRouter.get("/:genreId", (req,res) => {
 })
 
 
-bookRouter.post("/", function(req, res){
-  bookApi.addBook(req.body).then((newBook) => {
-    // res.send(newBook)
-    console.log(newBook)
-      res.redirect("/books")
+bookRouter.delete("/:bookId", (req,res) => {
+  bookApi.deleteBook(req.params.bookId)
+    .then((deleteBook) => {
+      res.json(deleteBook)
     })
-})
-
-bookRouter.put("/:bookId", function(req,res){
-  bookApi.updateBook(req.params.bookId, req.body).then(() => {
-    res.redirect("/books")
+    .catch((error) => {
+      res.send(error)
     })
-
-    // bookApi.updateBook().then(() => {
-    //   res.send("/");
-    // })
-})
-
-
-bookRouter.delete("/:bookId", function(req,res){
-  bookApi.deleteBook(req.params.bookId).then(() => {
-    res.redirect("/books")
-  })
 })
 
 // Step 6: Export the router from the file
