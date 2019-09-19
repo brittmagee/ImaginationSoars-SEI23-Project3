@@ -5,6 +5,7 @@ import Display from './Display.js'
 import Footer from './Footer.js'
 // import { connect } from ‘react-redux’
 
+
 export default class Home extends Component {
     render() {
         return (

@@ -20,15 +20,15 @@ genreRouter.get("/", (req, res) => {
     })
 })
 
-genreRouter.get("/exampleGenre", function(req, res) {
-  genreApi.exampleGenre()
-    .then(exampleGenre => {
-      res.json(exampleGenre)
-    })
-    .catch((error) => {
-      res.send(error)
-    })
-})
+// genreRouter.get("/exampleGenre", function(req, res) {
+//   genreApi.exampleGenre()
+//     .then(exampleGenre => {
+//       res.json(exampleGenre)
+//     })
+//     .catch((error) => {
+//       res.send(error)
+//     })
+// })
 
 
 genreRouter.get("/:genreId", (req,res) => {

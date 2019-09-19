@@ -1,5 +1,6 @@
 // Step 1: TODO: import mongoose connection (NOTE: skip this if you are not using mongoose)
 const mongoose = require('./connection.js')
+// const mongoose = require('mongoose')
 
 // Step 1 alternative: TODO: make a global variable to act as an in memory database. 
 //NOTE: doing this WILL NOT persist your data and you will loose your data once you stop running your server.
@@ -19,7 +20,7 @@ const booksSchema = new mongoose.Schema({
     required: true
   },
   //book associated with specific genre id 
-  genreId: mongoose.Schema.Types.ObjectId,
+  // genreId: mongoose.Schema.Types.ObjectId,
   yearPublished: Number,
   price: Number,
   quantity: Number
@@ -27,17 +28,17 @@ const booksSchema = new mongoose.Schema({
 
 const bookCollection = mongoose.model("books", booksSchema)
 
-const exampleBook = () => {
-    //note: the .create is a Promise
-  return bookCollection.create({
-     title: "The Giraffe and the Pelly and Me",
-     author: "Roald Dahl",
-    //  genreId: "Children",
-     yearPublished: 1985,
-     price: 7.99,
-     quantity: 2
-  })
-}
+// const exampleBook = () => {
+//     //note: the .create is a Promise
+//   return bookCollection.create({
+//      title: "The Giraffe and the Pelly and Me",
+//      author: "Roald Dahl",
+//     //  genreId: "Children",
+//      yearPublished: 1985,
+//      price: 7.99,
+//      quantity: 2
+//   })
+// }
 
 
 const getAllBooks = () => {
@@ -71,15 +72,11 @@ const deleteBook = (bookId) => {
 }
 // Step 3: TODO: create collection API (NOTE: skip this if you are not using mongoose)
 
-//const SampleCollection = mongoose.model('Sample', SampleModelSchema)
 const books = mongoose.model('Book', booksSchema)
-const example = mongoose.model('Example', exampleBook)
 
 // Step 4: export all functions from this file by adding their names as keys to this object
 module.exports = {
-  // getHelloWorldString,
   books,
-  example,
   getAllBooks,
   getAllBooksByGenre,
   getSingleBook,

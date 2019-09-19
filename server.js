@@ -5,7 +5,7 @@ const app = express()
 
 
 // Step 2: import routers from controllers/
-const { booksRouter } = require('./controllers/books.js')
+const { bookRouter } = require('./controllers/books.js')
 const { genreRouter } = require('./controllers/genre.js')
 const { shoppingCartRouter } = require('./controllers/shoppingCart.js')
 
@@ -38,9 +38,9 @@ app.use(express.static(`${__dirname}/client/build`))
 // Step 4: Add router for the application to use. The first argument is a prefix to all the paths defined in the router.
 
 
-app.use('/api/:bookId', booksRouter)
-app.use('/api/genre', genreRouter)
-app.use('/api/shoppingCart', shoppingCartRouter)
+app.use('/books', bookRouter)
+app.use('/genre', genreRouter)
+app.use('/shoppingCart', shoppingCartRouter)
 
 // Step 5: Add catch all route to serve up the built react app for any request not made to our /api/... routes.
 

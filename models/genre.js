@@ -15,18 +15,18 @@ const booksSchema = require('./books.js')
 
 const genreSchema = new mongoose.Schema({
   type: String,
-  books : [booksSchema]
+  // books : [booksSchema]
  })
 
  const genreCollection = mongoose.model("genres", genreSchema)
 
- const exampleGenre = () => {
-     //note: the .create is a Promise
-   return genreCollection.create({
-    type: "Fantasy",
-    books : [booksSchema]
-   })
- }
+//  const exampleGenre = () => {
+//      //note: the .create is a Promise
+//    return genreCollection.create({
+//     type: "Fantasy",
+//     books : [booksSchema]
+//    })
+//  }
  
  
  const getAllGenres = () => {
@@ -58,15 +58,12 @@ const genreSchema = new mongoose.Schema({
  
 // Step 3: TODO: create collection API (NOTE: skip this if you are not using mongoose)
 
-//const SampleCollection = mongoose.model('Sample', SampleModelSchema)
 const genre = mongoose.model('Genre', genreSchema)
-const example = mongoose.model('Example', exampleGenre)
+// const example = mongoose.model('Example', exampleGenre)
 
 // Step 4: export all functions from this file by adding their names as keys to this object
 module.exports = {
-  // getHelloWorldString,
   genre,
-  example,
   getAllGenres,
   getSingleGenre,
   addGenre,
