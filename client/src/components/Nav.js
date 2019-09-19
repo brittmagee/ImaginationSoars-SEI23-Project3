@@ -10,7 +10,7 @@ export default class Nav extends Component {
             //     <div>Size</div>
             // </div>
 
-            <nav className="nav-wrapper">
+            <nav className="nav-wrapper nav">
                 <div className="container">
                     <Link to="/" className="brand-logo">Shopping</Link>
                     

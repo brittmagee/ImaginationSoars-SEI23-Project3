@@ -20,7 +20,7 @@ const booksSchema = new mongoose.Schema({
     required: true
   },
   //book associated with specific genre id 
-  // genreId: mongoose.Schema.Types.ObjectId,
+  genreId: mongoose.Schema.Types.ObjectId,
   yearPublished: Number,
   price: Number,
   image: String,
@@ -47,7 +47,7 @@ const getAllBooks = () => {
     //note: the .find is a Promise
 }
 
-const getAllBooksByGenre = () => {
+const getAllBooksByGenre = (genreId) => {
   return bookCollection.find({genreId})
 }
 
@@ -64,7 +64,7 @@ const addBook = (newBook) => {
 
 
 const updateBook = (bookId, updatedBook) => {
-    return bookCollection.findByIdAndUpdate(bookId, updatedBook)
+    return bookCollection.findByIdAndUpdate(bookId, updatedBook, {new:true})
 }
 
 

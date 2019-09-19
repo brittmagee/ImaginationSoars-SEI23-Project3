@@ -48,7 +48,7 @@ const genreSchema = new mongoose.Schema({
  
  
  const updateGenre = (genreId, updatedGenre) => {
-     return genreCollection.findByIdAndUpdate(genreId, updatedGenre)
+     return genreCollection.findByIdAndUpdate(genreId, updatedGenre, {new:true})
  }
  
  

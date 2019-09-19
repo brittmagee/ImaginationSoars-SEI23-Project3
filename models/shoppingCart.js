@@ -34,7 +34,7 @@ const addBookToCart = (bookId) => {
 }
 
 const updateCart = (genreId, updatedGenre) => {
-  return genreCollection.findByIdAndUpdate(genreId, updatedGenre)
+  return genreCollection.findByIdAndUpdate(genreId, updatedGenre, {new:true})
 }
 
 const deleteCart = (cartId) => {
