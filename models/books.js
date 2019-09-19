@@ -23,6 +23,7 @@ const booksSchema = new mongoose.Schema({
   // genreId: mongoose.Schema.Types.ObjectId,
   yearPublished: Number,
   price: Number,
+  image: String,
   quantity: Number
 })
 
