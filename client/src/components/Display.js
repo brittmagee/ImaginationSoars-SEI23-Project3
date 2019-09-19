@@ -1,6 +1,7 @@
 // Step 1 import React, { Component } and axios
 import React, { Component } from 'react'
 
+
 // Step 2: Rename this class to reflect the component being created
 
 const getAllBooks = () =>
@@ -35,23 +36,12 @@ export default class Display extends Component {
                 {console.log(this.state.books)}
                 {this.state.books.map(book => (
                     <div>
-                        {/* <h3>{book.title}</h3>
-                        <h4>{book.author}</h4> */}
-                        <table>
-                            <tr>
-                                <th>{book.image}</th>
-                                <th></th>
-                            </tr>
-                            <tr>
-                                <td><h3>{book.title}</h3></td>
-                                <td>
-                                    <h4>{book.author}</h4>
-                                    <h5>{book.genreId}</h5>
-                                    <h5>{book.yearPublished}</h5>
-                                    <h5>{book.yearPublished}</h5>
-                                </td>
-                            </tr>
-                        </table>
+                        <h3>{book.title}</h3>
+                        <h4>{book.author}</h4>
+                        {/* <h5>{book.genreId}</h5> */}
+                        <h5>{book.yearPublished}</h5>
+                        <h5>{book.price}</h5>
+                        <h5>{book.quantity}</h5>
                     </div>
                     )
                 )}
@@ -61,3 +51,4 @@ export default class Display extends Component {
         )
     }
 }
+
