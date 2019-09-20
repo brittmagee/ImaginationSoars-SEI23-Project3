@@ -1,4 +1,4 @@
-//Place all functions, classes, and/or DB schemas here for a single model.
+//Place all functions, styling, and/or DB schemas here for a single model.
 
 // Step 1: TODO: import mongoose connection (NOTE: skip this if you are not using mongoose)
 
