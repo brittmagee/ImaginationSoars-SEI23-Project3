@@ -3,16 +3,11 @@ import React, { Component } from 'react'
 import '../App.js';
 import BookTable from './BookTable.js'
 
-import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
-import Card from '@material-ui/core/Card';
 import ButtonBase from '@material-ui/core/ButtonBase';
 import Divider from '@material-ui/core/Divider';
-import CardActionArea from '@material-ui/core/CardActionArea';
-import CardContent from '@material-ui/core/CardContent';
-import CardMedia from '@material-ui/core/CardMedia';
 
 
 // Step 2: Rename this class to reflect the component being created
@@ -56,6 +51,7 @@ export default class Display extends Component {
 
     componentDidMount() {
         this.getBooksFromServer()
+        console.log(this.props.type)
     }
 
     getBooksFromServer() {
@@ -66,6 +62,9 @@ export default class Display extends Component {
             })
     }
 
+
+    
+
     //Step 4:Render 
 
     render() {
@@ -74,7 +73,6 @@ export default class Display extends Component {
                 {console.log(this.state.books)}
                 {this.state.books.map(book => (
                     <div>
-                    {/* <div className={background.cardDetails}> */}
                     <div >
                         <Paper className={background.paper}>
                             <Grid container spacing={2}>
@@ -94,6 +92,18 @@ export default class Display extends Component {
                                             </Typography>
                                             <Typography  variant="subtitle1" color="textSecondary" paragraph>
                                                 {book.yearPublished}
+                                            </Typography>
+                                            <Typography  variant="subtitle1" color="textSecondary" paragraph>
+                                               Genre: {book.genreId}
+                                               {/* {this.props.type.filter(genre => {
+                                                   if(genre._id === book.genreId) {
+                                                       return(
+                                                           <p>{genre.type}</p>
+                                                       )
+                                                   }
+                                                }
+                                               )} */}
+
                                             </Typography>
                                             <BookTable />
                                             <Typography  variant="subtitle1" color="textSecondary" paragraph>
