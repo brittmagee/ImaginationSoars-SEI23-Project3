@@ -1,26 +1,26 @@
 import React, { Component } from 'react'
 
-// const allGenres = () => 
-//     fetch('/genre')
-//     .then(foo => foo.json())
+const allGenres = () => 
+    fetch('/genre')
+    .then(foo => foo.json())
 
 export default class Genre extends Component {
 
-    // state = {
-    //     type: [{}]
-    // }
+    state = {
+        type: [{}]
+    }
 
-    // componentDidMount() {
-    //     this.getBooksFromServer()
-    // }
+    componentDidMount() {
+        this.getBooksFromServer()
+    }
 
-    // getBooksFromServer() {
-    //     allGenres()
-    //         .then(allGenres => {
-    //             // console.log(allBooks)
-    //             this.setState( { type: allGenres } )
-    //         })
-    // }
+    getBooksFromServer() {
+        allGenres()
+            .then(allGenres => {
+                // console.log(allBooks)
+                this.setState( { type: allGenres } )
+            })
+    }
 
     render() {
         return (

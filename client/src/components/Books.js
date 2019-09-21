@@ -1,9 +1,8 @@
-import React, { Component, createFactory } from 'react'
+import React, { Component} from 'react'
 import Header from './Header.js'
 import Footer from './Footer.js'
 import Genre from './Genre.js'
 
-// import { connect } from ‘react-redux’
 
 const allGenres = () => 
     fetch('/genre')

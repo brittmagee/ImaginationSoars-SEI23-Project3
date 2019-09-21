@@ -154,12 +154,6 @@ export default function Header(type) {
             </div>
             <Nav />
       </Drawer>
-      <main className={styling.content}>
-        <div className={styling.appBarSpacer} />
-        <Container maxWidth="lg" className={styling.container}>
-            <Display />
-        </Container>
-      </main>
     </div>
     );
   }

@@ -2,7 +2,6 @@
 import React, { Component } from 'react'
 import '../App.js';
 import BookTable from './BookTable.js'
-
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
@@ -94,16 +93,7 @@ export default class Display extends Component {
                                                 {book.yearPublished}
                                             </Typography>
                                             <Typography  variant="subtitle1" color="textSecondary" paragraph>
-                                               Genre: {book.genreId}
-                                               {/* {this.props.type.filter(genre => {
-                                                   if(genre._id === book.genreId) {
-                                                       return(
-                                                           <p>{genre.type}</p>
-                                                       )
-                                                   }
-                                                }
-                                               )} */}
-
+                                               Genre: {book.type}
                                             </Typography>
                                             <BookTable />
                                             <Typography  variant="subtitle1" color="textSecondary" paragraph>

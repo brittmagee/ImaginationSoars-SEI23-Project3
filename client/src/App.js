@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-import Home from './components/Home.js'
+import Books from './components/Books.js'
+import Landing from './components/Landing.js'
 import './App.css';
-// import { Link } from 'react-router-dom'
-// const Link = require("react-router-dom").Link;
-// const Route = require("react-router-dom").Route;
 
 
 class App extends Component {
@@ -13,7 +11,8 @@ class App extends Component {
       <div className="App">
         <Router>
           <Switch>
-            <Route exact path="/" component={Home}/>
+            <Route exact path="/" component={Landing}/>
+            <Route exact path="/books" component={Books}/>
           </Switch>
         </Router>
     </div>

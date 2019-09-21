@@ -24,7 +24,8 @@ const booksSchema = new mongoose.Schema({
   yearPublished: Number,
   price: Number,
   image: String,
-  quantity: Number
+  quantity: Number,
+  type: String
 })
 
 const bookCollection = mongoose.model("books", booksSchema)

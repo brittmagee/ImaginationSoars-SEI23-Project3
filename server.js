@@ -5,6 +5,8 @@ const app = express()
 
 
 // Step 2: import routers from controllers/
+
+// const { homeRouter } = require('')
 const { bookRouter } = require('./controllers/books.js')
 const { genreRouter } = require('./controllers/genre.js')
 const { shoppingCartRouter } = require('./controllers/shoppingCart.js')
@@ -38,6 +40,8 @@ app.use(express.static(`${__dirname}/client/build`))
 // Step 4: Add router for the application to use. The first argument is a prefix to all the paths defined in the router.
 
 
+
+// app.use('/', homeRouter)
 app.use('/books', bookRouter)
 app.use('/genre', genreRouter)
 app.use('/shoppingCart', shoppingCartRouter)
