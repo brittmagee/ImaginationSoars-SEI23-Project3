@@ -6,6 +6,7 @@ import Landing from './Landing.js'
 import Books from './Books.js'
 import Genre from './Genre.js'
 
+
 import HomeIcon from '@material-ui/icons/Home';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
@@ -15,11 +16,15 @@ import ListIcon from '@material-ui/icons/List';
 import LocationOnIcon from '@material-ui/icons/LocationOn';
 import EventIcon from '@material-ui/icons/Event';
 import LibraryBooksIcon from '@material-ui/icons/LibraryBooks';
+import AddIcon from '@material-ui/icons/Add';
+
+
+
 
 export default class Nav extends Component {
     render() {
         return (
-            <nav className="nav-wrapper nav">
+            <nav >
                 <div className="container">
                     <ListItem button>
                         <ListItemIcon>

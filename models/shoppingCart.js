@@ -13,7 +13,11 @@ const mongoose = require('./connection.js')
 // NOTE: skip this if you are not using mongoose
 
 const cartSchema = new mongoose.Schema({
-  cart: Object
+  title: String,
+  author: String,
+  image: String,
+  price: Number,
+  quantity: Number
 })
 
 // Step 3: TODO: create collection API (NOTE: skip this if you are not using mongoose)

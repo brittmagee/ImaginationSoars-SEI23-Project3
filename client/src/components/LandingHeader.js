@@ -1,23 +1,19 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import Nav from './Nav.js'
-import Display from './Display.js'
+
+import Cart from './Cart.js'
 
 
 import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core/styles';
-// import CssBaseline from '@material-ui/core/CssBaseline';
 import Drawer from '@material-ui/core/Drawer';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
-import Badge from '@material-ui/core/Badge';
-import Container from '@material-ui/core/Container';
-// import Link from '@material-ui/core/Link';
 import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
-import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 
 
 // aligns the header with the sidenav divider
@@ -103,6 +99,9 @@ const CSS = makeStyles(style => ({
   fixedHeight: {
     height: 240,
   },
+  nav: {
+    marginTop: '20px'
+  }
 }));
 
 export default function Header(type) {
@@ -133,11 +132,7 @@ export default function Header(type) {
                 <Typography component="h1" variant="h3" color="inherit" noWrap className={styling.title}>
                     Imagination Soars
                 </Typography>
-                <IconButton color="inherit">
-                    <Badge badgeContent={1} color="secondary">
-                    <Link to="/shoppingCart"><ShoppingCartIcon/></Link>
-                    </Badge>
-                </IconButton>
+                <Cart />
             </Toolbar>
         </AppBar>
 
@@ -148,11 +143,13 @@ export default function Header(type) {
             }}
             open={open}>
             <div className={styling.toolbarIcon}>
-            <IconButton onClick={handleDrawerClose}>
-                <ChevronLeftIcon />
-            </IconButton>
+              <IconButton onClick={handleDrawerClose}>
+                  <ChevronLeftIcon />
+              </IconButton>
             </div>
-            <Nav />
+            <div className={styling.nav}>
+              <Nav />
+            </div>
       </Drawer>
     </div>
     );

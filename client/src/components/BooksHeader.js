@@ -1,7 +1,10 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import Nav from './Nav.js'
-import Display from './Display.js'
+import BooksDisplay from './BooksDisplay.js'
+import BookForm from './BookForm.js'
+
+import Cart from './Cart.js'
 
 
 import clsx from 'clsx';
@@ -103,9 +106,12 @@ const CSS = makeStyles(style => ({
   fixedHeight: {
     height: 240,
   },
+  nav: {
+    marginTop: '20px'
+  }
 }));
 
-export default function Header(type) {
+export default function Header(props) {
     const styling = CSS();
     const [open, setOpen] = React.useState(true);
     const handleDrawerOpen = () => {
@@ -133,15 +139,11 @@ export default function Header(type) {
                 <Typography component="h1" variant="h3" color="inherit" noWrap className={styling.title}>
                     Imagination Soars
                 </Typography>
-                <IconButton color="inherit">
-                    <Badge badgeContent={1} color="secondary">
-                    <Link to="/shoppingCart"><ShoppingCartIcon/></Link>
-                    </Badge>
-                </IconButton>
+                <Cart />
             </Toolbar>
         </AppBar>
 
-        <Drawer
+        <Drawer 
             variant="permanent"
             styling={{
             paper: clsx(styling.drawerPaper, !open && styling.drawerPaperClose),
@@ -152,12 +154,15 @@ export default function Header(type) {
                 <ChevronLeftIcon />
             </IconButton>
             </div>
-            <Nav />
+            <div className={styling.nav}>
+              <Nav />
+            </div>
       </Drawer>
       <main className={styling.content}>
         <div className={styling.appBarSpacer} />
+        {/* <BookForm /> */}
         <Container maxWidth="lg" className={styling.container}>
-            <Display />
+            {BooksDisplay(props.books)}
         </Container>
       </main>
     </div>

@@ -1,6 +1,9 @@
 // Step 1 import React, { Component } and axios
 import React, { Component } from 'react'
 import '../App.js';
+
+
+
 import BookTable from './BookTable.js'
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
@@ -11,9 +14,7 @@ import Divider from '@material-ui/core/Divider';
 
 // Step 2: Rename this class to reflect the component being created
   
-const getAllBooks = () =>
-    fetch('/books')
-        .then(foo => foo.json())
+
 
 const background = {
     display: 'grid',
@@ -41,42 +42,35 @@ const background = {
     }
 }
 
-export default class Display extends Component {
-    //Step 3: Create a state for the component to store view data
-    state = {
-        message: 'Display',
-        books: [{}]
-    }
-
-    componentDidMount() {
-        this.getBooksFromServer()
-        console.log(this.props.type)
-    }
-
-    getBooksFromServer() {
-        getAllBooks()
-            .then(allBooks => {
-                // console.log(allBooks)
-                this.setState( { books: allBooks } )
-            })
-    }
-
-
     
 
     //Step 4:Render 
 
-    render() {
+    export default (books) => {
+
+        const addBookToCart = (book, evnt)=> {
+            evnt.preventDefault();
+            console.log("clicked")
+
+            console.log(book)
+            fetch('/shoppingCart', {
+                method: 'POST',
+                body: JSON.stringify(book),
+                headers: {'Content-Type': 'application/json'}
+            })
+            .then(foo => foo.json())
+            .catch(error => console.log(error))
+        }
+
         return (
             <div style={background.root} >
-                {console.log(this.state.books)}
-                {this.state.books.map(book => (
+                {books.map(book => (
                     <div>
                     <div >
                         <Paper className={background.paper}>
                             <Grid container spacing={2}>
                                 <Grid item>
-                                <ButtonBase className={background.image} padding="10px">
+                                    <ButtonBase className={background.image} padding="10px">
                                         <img className={background.img} src={book.image} width="200"/>
                                     </ButtonBase>
                                 </Grid>
@@ -102,7 +96,7 @@ export default class Display extends Component {
                                         </Grid>
                                         <Grid item>
                                             <Typography variant="body2" style={{ cursor: 'pointer' }}>
-                                            Add To Cart
+                                            <button onClick={(e) => addBookToCart(book, e)}>Add to Cart</button>
                                             </Typography>
                                         </Grid>
                                     </Grid>
@@ -120,5 +114,4 @@ export default class Display extends Component {
         </div>
         )
     }
-}
 

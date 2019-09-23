@@ -18,7 +18,7 @@ bookRouter.get("/", (req, res) => {
     .catch((error) => {
       res.send(error)
     })
-  console.log("Lord of the Rings")
+
 })
 
 bookRouter.get("/booksbygenre", (req, res) => {
