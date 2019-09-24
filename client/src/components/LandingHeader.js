@@ -1,9 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import Nav from './Nav.js'
-
 import Cart from './Cart.js'
-
 
 import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core/styles';

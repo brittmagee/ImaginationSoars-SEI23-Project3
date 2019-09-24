@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
 
-import AddIcon from '@material-ui/icons/Add';
-import { makeStyles } from '@material-ui/core/styles';
-import Fab from '@material-ui/core/Fab';
+import Typography from '@material-ui/core/Typography';
 
 const background = {
   display: 'grid',
@@ -11,8 +9,6 @@ const background = {
       margin: "0 0 0 180px", //ensure the display card does not overflow into the sidenav
     },
   paper: {
-      // padding: 1,
-      // margin: 'auto',
       maxWidth: 500,
     },
   image: {
@@ -27,6 +23,15 @@ const background = {
     },
   price: {
       padding: '30px', 
+  },
+  form: {
+    display: 'flex',
+    justifyContent: 'center'
+  },
+  text: {
+    background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
+    margin: '0 400px 10px 400px',
+    borderRadius: '20px'
   }
 }
 
@@ -76,13 +81,12 @@ export default class BookForm extends Component {
   render() {
     return (
       <div>
-        {/* <Fab color="primary" aria-label="add" className={classes.fab}> */}
-        {/* <Fab color="primary" aria-label="add" >
-          <AddIcon />
-        </Fab> */}
         <div style={background.root}>
         <form>
-          <span className="formtext">Add Book</span>
+          <Typography variant="h4" color="inherit" noWrap style={background.text}>
+            Add Book
+          </Typography>
+          <div style={background.form}>
             <input 
               type="text" 
               placeholder="Title"
@@ -127,14 +131,16 @@ export default class BookForm extends Component {
                 value = {this.state.yearPublished} 
                 onChange={this.handleChange}
             />
+          
             {/* <select name="genre" value="Select..."> */}
             <select name="type" value ={this.state.type} onChange={this.handleChange}>
               {this.props.type.map(genre =>
-                <option value={genre._id}>{genre.type}</option>
-                // <option value={genre.type}>{genre.type}</option>
+                // <option value={genre._id}>{genre.type}</option>
+                <option value={genre.type}>{genre.type}</option>
               )}
             </select>
         <button onClick={this.addNewBook} type="submit">Add</button>
+        </div>
     	</form>
       </div>
     </div>

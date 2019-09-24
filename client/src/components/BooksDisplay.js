@@ -2,7 +2,6 @@
 import React, { Component } from 'react'
 import '../App.js';
 
-
 import BookTable from './BookTable.js'
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';

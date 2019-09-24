@@ -9,7 +9,6 @@ import Cart from './Cart.js'
 
 import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core/styles';
-// import CssBaseline from '@material-ui/core/CssBaseline';
 import Drawer from '@material-ui/core/Drawer';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -17,7 +16,6 @@ import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
 import Badge from '@material-ui/core/Badge';
 import Container from '@material-ui/core/Container';
-// import Link from '@material-ui/core/Link';
 import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
@@ -160,7 +158,6 @@ export default function Header(props) {
       </Drawer>
       <main className={styling.content}>
         <div className={styling.appBarSpacer} />
-        {/* <BookForm /> */}
         <Container maxWidth="lg" className={styling.container}>
             {BooksDisplay(props.books)}
         </Container>

@@ -1,11 +1,9 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-// import Genre from './Genre.js'
 
 import Landing from './Landing.js'
 import Books from './Books.js'
 import Genre from './Genre.js'
-
 
 import HomeIcon from '@material-ui/icons/Home';
 import ListItem from '@material-ui/core/ListItem';
@@ -16,9 +14,6 @@ import ListIcon from '@material-ui/icons/List';
 import LocationOnIcon from '@material-ui/icons/LocationOn';
 import EventIcon from '@material-ui/icons/Event';
 import LibraryBooksIcon from '@material-ui/icons/LibraryBooks';
-import AddIcon from '@material-ui/icons/Add';
-
-
 
 
 export default class Nav extends Component {
@@ -44,7 +39,7 @@ export default class Nav extends Component {
                 </Link>
                     <ListItem button>
                         <ListItemIcon>
-                        <Link to="/genre" component={Genre}><ListIcon /></Link>
+                        <Link to="/" component={Genre}><ListIcon /></Link>
                         </ListItemIcon>
                         <ListItemText primary="Genre" />
                     </ListItem>

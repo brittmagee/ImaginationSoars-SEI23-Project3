@@ -43,7 +43,7 @@ export default class Landing extends Component {
                         <Typography variant="body1" color="textSecondary" >Browse our books--from signed, first editions of the newest titles to used or rare copies of your old favorites.</Typography>
                         <Divider style={background.margin}/>
                         <div style={background.margin}>
-                            <Typography>The more that you read, the more things you will know. The more that you learn, the more places you’ll go.”</Typography>
+                            <Typography>"The more that you read, the more things you will know. The more that you learn, the more places you’ll go.”</Typography>
                             <Typography fontStyle="italic">~Dr. Seuss</Typography>
                         </div>
                     </Paper>
