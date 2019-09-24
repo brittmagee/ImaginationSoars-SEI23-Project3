@@ -41,8 +41,8 @@ const updateCart = (genreId, updatedGenre) => {
   return genreCollection.findByIdAndUpdate(genreId, updatedGenre, {new:true})
 }
 
-const deleteCart = (cartId) => {
-  return shoppingCartCollection.findByIdAndDelete(cartId)
+const deleteCart = (bookId) => {
+  return shoppingCartCollection.findByIdAndDelete(bookId)
 }
 
 // Step 5: TODO: export all functions from this file by adding their names as keys to this object

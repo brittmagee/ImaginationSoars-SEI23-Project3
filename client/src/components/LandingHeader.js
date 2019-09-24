@@ -7,6 +7,7 @@ import Cart from './Cart.js'
 
 import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core/styles';
+import List from '@material-ui/core/List';
 import Drawer from '@material-ui/core/Drawer';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -100,7 +101,7 @@ const CSS = makeStyles(style => ({
     height: 240,
   },
   nav: {
-    marginTop: '20px'
+    marginTop: '20px',
   }
 }));
 
@@ -113,6 +114,7 @@ export default function Header(type) {
     const handleDrawerClose = () => {
       setOpen(false);
     };
+
   
     return (
         <div>
@@ -135,20 +137,20 @@ export default function Header(type) {
                 <Cart />
             </Toolbar>
         </AppBar>
-
         <Drawer
             variant="permanent"
-            styling={{
-            paper: clsx(styling.drawerPaper, !open && styling.drawerPaperClose),
+            styling={{paper: clsx(styling.drawerPaper, !open && styling.drawerPaperClose),
             }}
             open={open}>
             <div className={styling.toolbarIcon}>
-              <IconButton onClick={handleDrawerClose}>
+              <IconButton 
+              onClick={handleDrawerClose}
+              >
                   <ChevronLeftIcon />
               </IconButton>
             </div>
             <div className={styling.nav}>
-              <Nav />
+              <List><Nav /></List>
             </div>
       </Drawer>
     </div>

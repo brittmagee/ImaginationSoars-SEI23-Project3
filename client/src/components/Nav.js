@@ -26,18 +26,22 @@ export default class Nav extends Component {
         return (
             <nav >
                 <div className="container">
+                <Link to="/" component={Landing}>
                     <ListItem button>
                         <ListItemIcon>
                             <Link to="/" component={Landing}><HomeIcon /></Link>
                         </ListItemIcon>
                         <ListItemText primary="Home" />
                     </ListItem>
+                </Link>
+                <Link to="/books" component={Books}>
                     <ListItem button>
                         <ListItemIcon>
                             <Link to="/books" component={Books}><LibraryBooksIcon /></Link>
                         </ListItemIcon>
                         <ListItemText primary="Books" />
                     </ListItem>
+                </Link>
                     <ListItem button>
                         <ListItemIcon>
                         <Link to="/genre" component={Genre}><ListIcon /></Link>

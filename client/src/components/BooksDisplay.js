@@ -3,13 +3,12 @@ import React, { Component } from 'react'
 import '../App.js';
 
 
-
 import BookTable from './BookTable.js'
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 import ButtonBase from '@material-ui/core/ButtonBase';
-import Divider from '@material-ui/core/Divider';
+
 
 
 // Step 2: Rename this class to reflect the component being created
@@ -23,8 +22,6 @@ const background = {
         margin: "0 0 0 180px", //ensure the display card does not overflow into the sidenav
       },
     paper: {
-        // padding: 1,
-        // margin: 'auto',
         maxWidth: 500,
       },
     image: {
@@ -41,14 +38,13 @@ const background = {
         padding: '30px', 
     }
 }
-
     
 
     //Step 4:Render 
 
     export default (books) => {
 
-        const addBookToCart = (book, evnt)=> {
+        const addBookToCart = (book, evnt) => {
             evnt.preventDefault();
             console.log("clicked")
 
@@ -63,6 +59,7 @@ const background = {
         }
 
         return (
+
             <div style={background.root} >
                 {books.map(book => (
                     <div>
@@ -109,8 +106,6 @@ const background = {
                 </div>
             </div>
             ))}
-                {/* <h3>{JSON.stringify(this.state.books)}</h3> */}
-                {/* <h1>{this.state.message}</h1> */}
         </div>
         )
     }

@@ -36,7 +36,7 @@ export default class Home extends Component {
                 this.setState( { type: allGenres } )
             })
     }
-
+    
     addNewBook(){
         fetch('/books', {
             method: 'POST',
@@ -45,16 +45,14 @@ export default class Home extends Component {
         })
         .then(foo => foo.json())
         .catch(error => console.log(error))
+        .then(this.getBooksFromServer())
     }
     
     render() {
         return (
             <div className="container">
                 <BooksHeader books={this.state.books} />
-                <BookForm  />
-                <Genre 
-                    type={this.state.type}
-                />
+                <BookForm  type={this.state.type}/>
                 <Footer />
             </div>
         )

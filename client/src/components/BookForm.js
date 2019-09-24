@@ -29,54 +29,11 @@ const background = {
       padding: '30px', 
   }
 }
-// const useStyles = makeStyles(theme => ({
-//     fab: {
-//       margin: theme.spacing(1),
-//     },
-//     extendedIcon: {
-//       marginRight: theme.spacing(1),
-//     },
-//   }));
-  
-//   export default function BookForm() {
-//     // const classes = useStyles();
-  
-//     // state = {
-//     //   title: "",
-//     //   author: "",
-//     //   image: "",
-//     //   price: "",
-//     //   quantity: "",
-//     //   yearPublished: "",
-//     //   genreId: "",
-//     //   genreType: "",
-//     // }
-
-
-//     // handleSubmit = async (event) => {
-//     //   event.preventDefault();
-//     //   const resp = await axios.get(`https://api.github.com/users/${this.state.companyName}`);
-//     //   this.props.onSubmit(resp.data);
-//     //   this.setState({ companyName: '' });
-//     // };
-
-//     return (
-//     );
-//   }
-// }
-
-// const useStyles = makeStyles(theme => ({
-//   fab: {
-//     margin: theme.spacing(1),
-//   },
-//   extendedIcon: {
-//     marginRight: theme.spacing(1),
-//   },
-// }));
 
 
 
 export default class BookForm extends Component {
+
 
     state = {
         title: "",
@@ -101,12 +58,6 @@ export default class BookForm extends Component {
 
   }
 
-  handleSubmit(evnt) {
-    
-    evnt.preventDefault();
-    this.props.addNewBook(this.state);
-    window.location.reload();
-  }
 
   addNewBook = (evnt)=> {
     evnt.preventDefault();
@@ -119,77 +70,71 @@ export default class BookForm extends Component {
     })
     .then(foo => foo.json())
     .catch(error => console.log(error))
+    window.location.reload();
 }
 
   render() {
     return (
       <div>
         {/* <Fab color="primary" aria-label="add" className={classes.fab}> */}
-        <Fab color="primary" aria-label="add" >
+        {/* <Fab color="primary" aria-label="add" >
           <AddIcon />
-        </Fab>
+        </Fab> */}
         <div style={background.root}>
-        <form onSubmit={this.handleSubmit}>
-      <span className="formtext">Add Book</span>
-    	  <input 
-          type="text" 
-          placeholder="Title"
-          name="title"
-          value = {this.state.title} 
-          onChange={this.handleChange}
-          required 
-        />
-        <input 
-            type="text"
-            placeholder="Author" 
-            name="author"
-            value = {this.state.author} 
-            onChange={this.handleChange}
-            required
-        />
-        <input 
-            type="text"
-            placeholder="Image (url)" 
-            name="image"
-            value = {this.state.image} 
-            onChange={this.handleChange}
-        />
-        <input 
-            type="number"
-            placeholder="Price" 
-            name="price"
-            value = {this.state.price} 
-            onChange={this.handleChange}
-        />
-        <input 
-            type="number"
-            placeholder="Quantity"
-            name="quantity"
-            value = {this.state.quantity} 
-            onChange={this.handleChange}
-        />
-        <input 
-            type="number"
-            placeholder="Year Published" 
-            name="yearPublished"
-            value = {this.state.yearPublished} 
-            onChange={this.handleChange}
-        />
-        {/* <input 
-            type="text"
-            placeholder="Genre Id" 
-            name="genreId"
-            value = {this.state.genreId} 
-            onChange={this.handleChange}
-        />  */}
-        <input 
-            type="text"
-            placeholder="Genre Type" 
-            name="type"
-            value = {this.state.type} 
-            onChange={this.handleChange}
-        />
-        <button onClick={this.addNewBook}>Add</button>
+        <form>
+          <span className="formtext">Add Book</span>
+            <input 
+              type="text" 
+              placeholder="Title"
+              name="title"
+              value = {this.state.title} 
+              onChange={this.handleChange}
+              required 
+            />
+            <input 
+                type="text"
+                placeholder="Author" 
+                name="author"
+                value = {this.state.author} 
+                onChange={this.handleChange}
+                required
+            />
+            <input 
+                type="text"
+                placeholder="Image (url)" 
+                name="image"
+                value = {this.state.image} 
+                onChange={this.handleChange}
+            />
+            <input 
+                type="number"
+                placeholder="Price" 
+                name="price"
+                value = {this.state.price} 
+                onChange={this.handleChange}
+            />
+            <input 
+                type="number"
+                placeholder="Quantity"
+                name="quantity"
+                value = {this.state.quantity} 
+                onChange={this.handleChange}
+            />
+            <input 
+                type="number"
+                placeholder="Year Published" 
+                name="yearPublished"
+                value = {this.state.yearPublished} 
+                onChange={this.handleChange}
+            />
+            {/* <select name="genre" value="Select..."> */}
+            <select name="type" value ={this.state.type} onChange={this.handleChange}>
+              {this.props.type.map(genre =>
+                <option value={genre._id}>{genre.type}</option>
+                // <option value={genre.type}>{genre.type}</option>
+              )}
+            </select>
+        <button onClick={this.addNewBook} type="submit">Add</button>
     	</form>
       </div>
     </div>

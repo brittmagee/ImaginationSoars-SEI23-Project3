@@ -14,6 +14,7 @@ shoppingCartRouter.get("/", (req, res) => {
   shoppingCartApi.allCartItems()
     .then(cartItems => {
     res.json(cartItems)
+    console.log("tester working")
   })
     .catch((error) => {
       res.send(error)
@@ -41,8 +42,8 @@ shoppingCartRouter.post("/", (req, res) => {
     })
 })
 
-shoppingCartRouter.delete("/:cartId", (req,res) => {
-  shoppingCartApi.deleteCart(req.params.cartId)
+shoppingCartRouter.delete("/:bookId", (req,res) => {
+  shoppingCartApi.deleteCart(req.params.bookId)
     .then((deleteCartItem) => {
       res.json(deleteCartItem)
     })
