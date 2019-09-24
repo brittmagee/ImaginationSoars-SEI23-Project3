@@ -1,6 +1,6 @@
 # eCommerce Bookstore: Imagination Soars
 
-#### This React Application is the beginning stages of a fully functional eCommerce bookstore. Website users can view and add books to the 
+#### This React Application is the beginning stages of a fully functional eCommerce bookstore. Website users can view and add books to the page. Users will also be able to add and remove items from the shopping cart. 
 
 ##### Important Links:
 [**Deployed Site**](https://tranquil-hollows-36268.herokuapp.com/)
