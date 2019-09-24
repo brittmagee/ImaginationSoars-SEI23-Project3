@@ -1,6 +1,6 @@
-# eCommerce Title....
+# eCommerce Bookstore: Imagination Soars
 
-#### Project description and backstory....
+#### This React Application is the beginning stages of a fully functional eCommerce bookstore. Website users can view and add books to the 
 
 ##### Important Links:
 [**Deployed Site**](https://tranquil-hollows-36268.herokuapp.com/)
@@ -19,6 +19,7 @@
     <dd>Mongoose</dd>
     <dd>HTML5</dd>
     <dd>CSS</dd>
+    <dd>Material UI</dd>
 </dl>
 
 #### This application has: 

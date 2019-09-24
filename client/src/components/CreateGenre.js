@@ -71,7 +71,8 @@ export default class CreateGenre extends Component {
         return (
             <div>
             <div style={background.root}>
-            <form>
+            {/* <form> */}
+            <form onSubmit={this.addNewGenre}>
               <Typography variant="h4" color="inherit" noWrap style={background.text}>
                 Add Genre
               </Typography>
@@ -84,7 +85,8 @@ export default class CreateGenre extends Component {
                   onChange={this.handleChange}
                   required 
                 />
-            <button onClick={this.addNewGenre} type="submit">Add</button>
+                <input type="submit" value="Add" />
+                {/* <button onClick={this.addNewGenre} type="submit">Add</button> */}
             </div>
             </form>
           </div>

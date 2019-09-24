@@ -82,7 +82,8 @@ export default class BookForm extends Component {
     return (
       <div>
         <div style={background.root}>
-        <form>
+        {/* <form> */}
+        <form onSubmit={this.addNewBook}>
           <Typography variant="h4" color="inherit" noWrap style={background.text}>
             Add Book
           </Typography>
@@ -139,7 +140,8 @@ export default class BookForm extends Component {
                 <option value={genre.type}>{genre.type}</option>
               )}
             </select>
-        <button onClick={this.addNewBook} type="submit">Add</button>
+            <input type="submit" value="Add" />
+        {/* <button onClick={this.addNewBook} type="submit">Add</button> */}
         </div>
     	</form>
       </div>
