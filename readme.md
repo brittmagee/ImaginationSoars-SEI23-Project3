@@ -23,8 +23,8 @@
 
 #### This application has: 
 
-* Three API models – ....
-* CSS styling...
+* Three API models – Books, Genres, and Shopping Cart
+* CSS styling: Material UI and customizations
 * Wireframes that were designed during the planning process.
 * ERD
 * Deployed online and accessible to the public via Heroku

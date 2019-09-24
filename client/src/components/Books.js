@@ -1,8 +1,8 @@
 import React, { Component} from 'react'
 import Footer from './Footer.js'
 import BooksHeader from './BooksHeader.js'
-import Genre from './Genre.js'
 import BookForm from './BookForm.js'
+import CreateGenre from './CreateGenre'
 
 
 const allGenres = () => 
@@ -53,6 +53,7 @@ export default class Home extends Component {
             <div className="container">
                 <BooksHeader books={this.state.books} />
                 <BookForm  type={this.state.type}/>
+                <CreateGenre />
                 <Footer />
             </div>
         )

@@ -35,6 +35,12 @@ const background = {
       },
     price: {
         padding: '30px', 
+    },
+    button: {
+        background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
+        borderRadius: '20px',
+        margin: '0 0 10px 0',
+        padding: '10px'
     }
 }
     
@@ -92,7 +98,7 @@ const background = {
                                         </Grid>
                                         <Grid item>
                                             <Typography variant="body2" style={{ cursor: 'pointer' }}>
-                                            <button onClick={(e) => addBookToCart(book, e)}>Add to Cart</button>
+                                            <button style={background.button} onClick={(e) => addBookToCart(book, e)}>Add to Cart</button>
                                             </Typography>
                                         </Grid>
                                     </Grid>
